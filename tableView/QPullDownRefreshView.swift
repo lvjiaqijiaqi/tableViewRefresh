@@ -101,7 +101,7 @@ public class QPullDownRefreshView: UIView {
     
     override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if keyPath == QTableViewRefreshConfig.KeyPaths.ContentOffset {
-            if let scrollView = self.scrollView {
+            if let scrollView = self.scrollView  where scrollView.contentOffset.y < -self.originalContentInsetTop  {
                 if state == .Stopped && scrollView.dragging {
                     self.loadingSharpLayer?.loadingLayerState = .Dragging
                     state = .Dragging

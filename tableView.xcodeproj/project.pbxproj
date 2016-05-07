@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AB12FBDE1CD8472200235840 /* QobjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12FBDD1CD8472200235840 /* QobjectExtension.swift */; };
 		AB12FBE01CD8AC5300235840 /* LoadingSharpLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12FBDF1CD8AC5300235840 /* LoadingSharpLayer.swift */; };
+		AB79F7411CDB4494007701E9 /* QPullUpLoadMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB79F7401CDB4494007701E9 /* QPullUpLoadMoreView.swift */; };
 		ABC7392F1CD216A600DE5EA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC7392E1CD216A600DE5EA4 /* AppDelegate.swift */; };
 		ABC739311CD216A600DE5EA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC739301CD216A600DE5EA4 /* ViewController.swift */; };
 		ABC739341CD216A600DE5EA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC739321CD216A600DE5EA4 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		AB12FBDD1CD8472200235840 /* QobjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QobjectExtension.swift; sourceTree = "<group>"; };
 		AB12FBDF1CD8AC5300235840 /* LoadingSharpLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingSharpLayer.swift; sourceTree = "<group>"; };
+		AB79F7401CDB4494007701E9 /* QPullUpLoadMoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QPullUpLoadMoreView.swift; sourceTree = "<group>"; };
 		ABC7392B1CD216A600DE5EA4 /* tableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC7392E1CD216A600DE5EA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC739301CD216A600DE5EA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				ABC739611CD34F9100DE5EA4 /* QPullDownRefreshView.swift */,
 				AB12FBDD1CD8472200235840 /* QobjectExtension.swift */,
 				AB12FBDF1CD8AC5300235840 /* LoadingSharpLayer.swift */,
+				AB79F7401CDB4494007701E9 /* QPullUpLoadMoreView.swift */,
 			);
 			name = tableviewRefresh;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC739311CD216A600DE5EA4 /* ViewController.swift in Sources */,
+				AB79F7411CDB4494007701E9 /* QPullUpLoadMoreView.swift in Sources */,
 				AB12FBE01CD8AC5300235840 /* LoadingSharpLayer.swift in Sources */,
 				ABC739621CD34F9100DE5EA4 /* QPullDownRefreshView.swift in Sources */,
 				AB12FBDE1CD8472200235840 /* QobjectExtension.swift in Sources */,

@@ -79,7 +79,9 @@ public extension UIScrollView {
     
     private struct Q_associatedKeys {
         static var pullDownRefreshView = "pullToRefreshView"
+        static var pullUpLoadMoreView = "pullUpLoadMoreView"
     }
+    
     private var pullDownRefreshView: QPullDownRefreshView? {
         get {
             return objc_getAssociatedObject(self, &Q_associatedKeys.pullDownRefreshView ) as? QPullDownRefreshView
@@ -89,16 +91,24 @@ public extension UIScrollView {
         }
     }
     
+    private var pullUpLoadMoreView: QPullUpLoadMoreView? {
+        get {
+            return objc_getAssociatedObject(self, &Q_associatedKeys.pullUpLoadMoreView ) as? QPullUpLoadMoreView
+        }
+        set {
+            objc_setAssociatedObject(self, &Q_associatedKeys.pullUpLoadMoreView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+
+    
     public func Q_addPullDownRefreshWithActionHandler(actionHandler: () -> Void) {
         multipleTouchEnabled = false
         panGestureRecognizer.maximumNumberOfTouches = 1
-        
         let pullDownRefreshView = QPullDownRefreshView()
         self.pullDownRefreshView = pullDownRefreshView
         pullDownRefreshView.actionHandler = actionHandler
         addSubview(pullDownRefreshView)
         pullDownRefreshView.observing = true
-        
     }
     
     public func Q_removePullToRefresh() {
@@ -110,7 +120,30 @@ public extension UIScrollView {
         self.pullDownRefreshView?.completeLoading()     
     }
  
+    
+    public func Q_addPullUpLoadMoreWithActionHandler(actionHandler: () -> Void) {
+        multipleTouchEnabled = false
+        panGestureRecognizer.maximumNumberOfTouches = 1
+        let pullUpLoadMoreView = QPullUpLoadMoreView()
+        self.pullUpLoadMoreView = pullUpLoadMoreView
+        pullUpLoadMoreView.actionHandler = actionHandler
+        addSubview(self.pullUpLoadMoreView!)
+        pullUpLoadMoreView.observing = true
+    }
+    
+    public func Q_removePullUpLoadMore() {
+        pullUpLoadMoreView?.observing = false
+        pullUpLoadMoreView?.removeFromSuperview()
+    }
+
+    public func Q_completeLoadMore() {
+        self.pullUpLoadMoreView!.hidden = true
+    }
+    public func Q_failLoadMore() {
+        self.pullUpLoadMoreView!.failLoading()
+    }
 }
+
 
 
 
